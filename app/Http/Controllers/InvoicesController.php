@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Invoice;
 
 
 class InvoicesController extends Controller
@@ -12,9 +13,10 @@ class InvoicesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Invoice $invoice)
     {
-        return view('invoices/list', ['invoicesList' => array()]);
+        $invoicesList = $invoice->all();
+        return view('invoices/list', ['invoicesList' => $invoicesList]);
     }
 
     /**

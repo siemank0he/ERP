@@ -6,10 +6,17 @@
 
 @section('content')
     <div class="container">
+        <table>
         @forelse ($invoicesList as $invoice)
-            Tu będą dane ksiązki!
+            <tr>
+                <td> {{ $invoice->name }} </td>
+                <td> {{ $invoice->amount }} </td>
+                <td> {{ $invoice->price_netto }} </td>
+                <td> {{ $invoice->price_brutto }} </td>
+            </tr>
         @empty
             Brak rekordów!
         @endforelse
+        </table>
     </div>
 @endsection
