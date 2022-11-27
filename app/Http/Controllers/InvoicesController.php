@@ -26,7 +26,14 @@ class InvoicesController extends Controller
      */
     public function create()
     {
-        //
+        $invoice = new Invoice();
+        $invoice->name = "Faktura za Netflixa";
+        $invoice->amount = 1;
+        $invoice->price_netto = 47;
+        $invoice->price_brutto = 60;
+        $invoice->save();
+
+        return redirect('invoices');
     }
 
     /**
@@ -48,7 +55,8 @@ class InvoicesController extends Controller
      */
     public function show($id)
     {
-        //
+        $invoice = Invoice::find($id);
+        return view('invoices/showInvoice', ['invoice' => $invoice]);
     }
 
     /**
@@ -59,7 +67,14 @@ class InvoicesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $invoice = Invoice::find($id);
+        $invoice->name = "Faktura za garnek";
+        $invoice->amount = 1;
+        $invoice->price_netto = 158;
+        $invoice->price_brutto = 201;
+        $invoice->save();
+
+        return redirect('invoices');
     }
 
     /**
@@ -82,6 +97,8 @@ class InvoicesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $invoice =Invoice::find($id);
+        $invoice->delete();
+        return redirect('invoices');
     }
 }

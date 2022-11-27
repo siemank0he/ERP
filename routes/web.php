@@ -19,3 +19,4 @@ Route::get('/', function () {
 });
 
 Route::resource('invoices', InvoicesController::class);
+Route::get('invoices/{id}/delete', [InvoicesController::class, 'destroy']);
