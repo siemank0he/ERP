@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\InvoicesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +16,3 @@ use App\Http\Controllers\InvoicesController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::resource('invoices', InvoicesController::class);
-Route::get('invoices/{id}/delete', [InvoicesController::class, 'destroy']);
