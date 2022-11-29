@@ -9,10 +9,10 @@
             {!! csrf_field() !!}
             @method("PATCH")
             <input type="hidden" name="id" id="id" value="{{ $cards->id }}">
-            <label>Data</label>
-            <input type="date" name="date" id="date" value="{{ $cards->date }}" class="form-control"><br>
-            <label>Wartość</label>
-            <input type="text" name="value" id="value" value="{{ $cards->value }}" class="form-control"><br>
+            <label>Tytuł</label>
+            <input type="text" name="card_title" id="card_title" value="{{ $cards->card_title }}" class="form-control"><br>
+            <label>Opis</label>
+            <input type="text" name="card_desc" id="card_desc" value="{{ $cards->card_desc }}" class="form-control"><br>
             <input type="submit" value="Edytuj" class="btn btn-success">
         </form>
 

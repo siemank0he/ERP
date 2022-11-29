@@ -10,5 +10,7 @@ class Card extends Model
     use HasFactory;
     protected $table = 'cards';
     protected $primaryKey = 'id';
-    protected $fillable = ['date', 'value'];
+    protected $fillable = [
+        'card_title', 'card_desc'
+    ];
 }
