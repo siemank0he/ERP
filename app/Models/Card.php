@@ -10,7 +10,9 @@ class Card extends Model
     use HasFactory;
     protected $table = 'cards';
     protected $primaryKey = 'id';
-    protected $fillable = [
-        'card_title', 'card_desc'
-    ];
+    protected $fillable = [ 'card_title', 'card_desc' ];
+
+    public function cardDetails() {
+        return $this->hasMany(CardDetail::class);
+    }
 }

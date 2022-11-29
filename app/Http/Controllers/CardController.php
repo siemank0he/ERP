@@ -50,6 +50,8 @@ class CardController extends Controller
     public function show($id)
     {
         $card = Card::find($id);
+
+
         return view('cards.show')->with('cards', $card);
     }
 

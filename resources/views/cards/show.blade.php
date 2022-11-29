@@ -8,6 +8,15 @@
         <p class="card-title">{{$cards->card_desc}}</p>
     </div>
 
+    <ul>
+        @forelse ($cards->cardDetails as $detail)
+            <li> Wartość: {{ $detail['value'] }} | Data: {{ $detail['date'] }}</li>
+        @empty
+            <p>Brak danych</p>
+        @endforelse
+
+    </ul>
+
     <div class="card-footer d-flex">
         <a href="{{ url('/cards/' . $cards->id . '/edit') }}" title="Edytuj" class="btn btn-primary btn-sm">Edytuj</a>
 
